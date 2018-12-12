@@ -4,8 +4,8 @@ const {
     StyleSheet,
     Dimensions,
     Platform
-    } = React;
-const {height, width} = Dimensions.get('window');
+} = React;
+const { height, width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     baseText: {
@@ -16,14 +16,14 @@ const styles = StyleSheet.create({
     dimText: {
         color: '#9b9b9b',
     },
-    wvContainer:{
+    wvContainer: {
         backgroundColor: '#fff',
         height: height,
         width: width,
         position: 'absolute',
         bottom: 0,
-        left:0,
-        zIndex:1000
+        left: 0,
+        zIndex: 1000
     },
     container: {
         backgroundColor: '#fff',
@@ -31,22 +31,22 @@ const styles = StyleSheet.create({
         width: width,
         position: 'absolute',
         bottom: 0,
-        left:0,
+        left: 0,
     },
     emoji: {
         textAlign: 'center',
-        fontSize: 25,
+        fontSize: 20,
         lineHeight: 30,
-        color: '#rgba(0,0,0,1)'
+        color: 'rgba(30, 30, 30, 1)'
     },
-    emojiTouch:{
-        width: (width-30)/6,
+    emojiTouch: {
+        width: (width - 30) / 6,
         height: 50,
         justifyContent: 'center',
         alignItems: 'center'
     },
-    delete:{
-        right:0
+    delete: {
+        right: 0
     },
     scrollTable: {
         width: width
@@ -109,9 +109,9 @@ const styles = StyleSheet.create({
         height: 6,
         borderRadius: 3,
     },
-    backspace:{
-        width:30,
-        height:30,
+    backspace: {
+        width: 30,
+        height: 30,
         opacity: .5
     },
     plusButton: {

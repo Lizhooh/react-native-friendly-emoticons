@@ -20,14 +20,14 @@ npm install react-native-emoticons
 - step 1
 
 	Import the component package.
-	
+
 	```js
 	import Emoticons from 'react-native-emoticons';
 	```
 - step 2
 
 	Write the component code in the proper place of your page render.
-	
+
 	```js
 	<Emoticons
 		 onEmoticonPress={this._onEmoticonPress.bind(this)}
@@ -38,7 +38,7 @@ npm install react-native-emoticons
 		 showPlusBar={true}
      />
 	```
-	> **Tip:**  The attribute `onEmoticonPress ` can get the emoticos results like `{code:'😁', name: 'GRIMACING FACE'}`. The attribute `show ` will control that if the component is visible.  The attribute `onBackspacePress ` will add a function for backspace button. 
+	> **Tip:**  The attribute `onEmoticonPress ` can get the emoticos results like `{code:'😁', name: 'GRIMACING FACE'}`. The attribute `show ` will control that if the component is visible.  The attribute `onBackspacePress ` will add a function for backspace button.
 
 ### props
 
@@ -51,6 +51,8 @@ npm install react-native-emoticons
 |**`showHistoryBar `**|`Bool `| enable history function |`No`| true |
 |**`showPlusBar `**|`Bool `| enable more emoticons function(is on developing, if you have interesting on this, welcome pull request.)|`No`| true |
 |**`asyncRender `**|`Bool `| async render |`No`| false |
+|**`emojiStyle `** |`Object `|  emoji text style |`No`| null |
+
 
 ### API
 
@@ -61,11 +63,11 @@ import * as emoticons from 'react-native-emoticons';
 ```
 
 1. stringify
-	
+
 	```js
-	//Most database can't restore the emoji string😤,so we map 
+	//Most database can't restore the emoji string😤,so we map
 	//them to common string.
-	
+
 	const string = emoticons.stringify('This is source emoji 😁');
 	console.log(string);
 	```
@@ -73,13 +75,13 @@ import * as emoticons from 'react-native-emoticons';
 	//output
 	'This is source emoji [GRIMACING FACE]'
 	```
-	
+
 2. parse
 
 	```js
 	//If we want to show the emoji(fetch from database) in view page
 	//we need parse the string
-	
+
 	const emoji = emoticons.parse('This is source emoji [GRIMACING FACE]');
 	console.log(emoji);
 	```
@@ -102,5 +104,5 @@ import * as emoticons from 'react-native-emoticons';
 
 
 ## Further
-	
+
 ###	Support custom emoticons like `weixin`

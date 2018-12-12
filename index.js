@@ -71,7 +71,8 @@ class Emoticons extends React.Component {
         showHistoryBar: true,
         showPlusBar: true,
 		asyncRender: false,
-		offsetBottom: 0,
+        offsetBottom: 0,
+        emojiStyle: {},
     };
 
     componentDidMount() {
@@ -168,7 +169,7 @@ class Emoticons extends React.Component {
 
     _onBackspacePress() {
         if (this.props.onBackspacePress)
-            this.props.onBackspacePress();
+            this.props.onBackspacePress(2);
     }
 
     _onCloseWV() {
@@ -231,7 +232,7 @@ class Emoticons extends React.Component {
                                             key={Math.random()+value.name}
                                             >
                                             <Text
-                                                style={styles.emoji}
+                                                style={[styles.emoji, this.props.emojiStyle]}
                                                 >
                                                 {value.code}
                                             </Text>
