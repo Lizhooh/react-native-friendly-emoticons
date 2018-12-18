@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     },
     groupView: {
         flex: 1,
+        height: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
         flexWrap: 'wrap',
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingBottom: 0,
         width: 60,
-        borderRightWidth: 1,
+        borderRightWidth: StyleSheet.hairlineWidth,
         borderColor: 'rgba(178,178,178,.3)',
         backgroundColor: '#fff'
     },
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
         height: 40,
         width: width,
         flexDirection: 'row',
-        borderWidth: 1,
+        borderWidth: StyleSheet.hairlineWidth,
         borderBottomWidth: 0,
         borderLeftWidth: 0,
         borderRightWidth: 0,
