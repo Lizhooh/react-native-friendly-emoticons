@@ -33,7 +33,7 @@ class TabBarDot extends React.Component {
         const the = this;
         this._listener = this.props.scrollValue.addListener(this._setAnimationValue);
 
-        DeviceEventEmitter.addListener('tabChanged',(tab)=>{
+        DeviceEventEmitter.addListener('tabChanged', (tab) => {
             the.props.goToPage(0);
 
         });
@@ -47,19 +47,20 @@ class TabBarDot extends React.Component {
         this.props.goToPage(i);
     }
 
-    componentWillReceiveProps(){
+    componentWillReceiveProps() {
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         //this.props.goToPage(this.props.activeTab);
     }
 
     render() {
-        return (<View style={[styles.tabsDot, this.props.style, ]}>
+        return (<View style={[styles.tabsDot, this.props.style,]}>
             {this.props.tabs.map((tab, i) => {
                 return <TouchableOpacity ref={(component) => this.tabComponent.push(component)}
-                                         key={tab} onPress={() => this._onIconPress(i)}
-                                         style={[styles.tabDot,{backgroundColor: (this.props.activeTab === i? '#ccc': '#fff')}]}>
+                    key={tab} onPress={() => this._onIconPress(i)}
+                    style={[styles.tabDot, { backgroundColor: (this.props.activeTab === i ? '#ccc' : '#fff') }]}
+                    activeOpacity={0.8}>
                     <View style={styles.dot}></View>
                 </TouchableOpacity>;
             })}

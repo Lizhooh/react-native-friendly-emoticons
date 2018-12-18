@@ -44,15 +44,15 @@ class More extends React.Component {
 
     render() {
         return (
-            <View style={[styles.container, {height: height - 21}, Platform.OS === 'android' ? null : {marginTop: 21}]}>
+            <View style={[styles.container, { height: height - 21 }, Platform.OS === 'android' ? null : { marginTop: 21 }]}>
                 <Toolbar
                     title="添加商品"
                     navigator={this.props.navigator}
                     hideDrop={true}
                     onLeftIconClicked={this._goBack.bind(this)}
-                    />
+                />
                 <WebView
-                    source={{uri: DEFAULT_URL}}
+                    source={{ uri: DEFAULT_URL }}
                     style={styles.web}
                     ref={WEBVIEW_REF}
                     automaticallyAdjustContentInsets={false}
@@ -62,7 +62,7 @@ class More extends React.Component {
                     decelerationRate="normal"
                     startInLoadingState={true}
                     injectedJavaScript={injectedJavaScript}
-                    >
+                >
                 </WebView>
             </View>
 

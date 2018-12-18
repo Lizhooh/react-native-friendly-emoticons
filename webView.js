@@ -14,7 +14,7 @@ import {
     Platform,
     Button,
 } from 'react-native';
-const {height, width} = Dimensions.get('window');
+const { height, width } = Dimensions.get('window');
 var backImg = require('./rg_left.png');
 
 class Webview extends React.Component {
@@ -36,23 +36,22 @@ class Webview extends React.Component {
 
     render() {
         return (
-            <View style={[styles.container, Platform.OS === 'android' ? {marginTop: 21} : {marginTop: 21}]} visible='hidden'>
+            <View style={[styles.container, Platform.OS === 'android' ? { marginTop: 21 } : { marginTop: 21 }]} visible='hidden'>
                 <View style={styles.toolbar}>
                     <TouchableOpacity
                         style={styles.leftIOSContainer}
-                        onPress={this._onBackPress.bind(this)}
-                        >
+                        onPress={this._onBackPress.bind(this)}>
                         <Image
                             style={styles.leftIOS}
                             source={backImg}
-                            />
+                        />
                     </TouchableOpacity>
 
                     <View style={styles.titleViewIOS}>
                         <TouchableOpacity style={styles.titleViewIOSClick}>
                             <Text
                                 style={styles.titleIOS}
-                                >
+                            >
                                 表情商城
                             </Text>
                         </TouchableOpacity>
@@ -68,7 +67,6 @@ class Webview extends React.Component {
                         If you like this component, a star will be nice, thanks!
                     </Text>
                 </View>
-
             </View>
 
         )
@@ -93,7 +91,7 @@ const styles = StyleSheet.create({
         //height: 58,
         //shadowOffset: {width: 0, height: .2,},
         //shadowOpacity: .3,
-        borderBottomWidth: 1,
+        borderBottomWidth: StyleSheet.hairlineWidth,
         borderColor: '#eee',
         shadowColor: '#555',
         flexDirection: 'row',
@@ -137,7 +135,7 @@ const styles = StyleSheet.create({
     },
     tip: {
         fontSize: 20,
-        marginTop:30,
+        marginTop: 30,
     },
     tip1: {
         fontSize: 12,

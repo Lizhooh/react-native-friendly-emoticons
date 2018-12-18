@@ -33,13 +33,14 @@ class TabBar extends React.Component {
 
     componentDidMount() {
         this._listener = this.props.scrollValue.addListener(this._setAnimationValue);
-        if (Platform.OS === 'android')
-            setTimeout(()=>{
-                this.props.goToPage(this.props.activeTab+1);
-            },100)
+        if (Platform.OS === 'android') {
+            setTimeout(() => {
+                this.props.goToPage(this.props.activeTab + 1);
+            }, 100);
+        }
     }
 
-    componentWillUpdate(){
+    componentWillUpdate() {
 
     }
 
@@ -62,42 +63,40 @@ class TabBar extends React.Component {
 
     render() {
         return (
-            <View style={[styles.tabs, this.props.style, ]}>
+            <View style={[styles.tabs, this.props.style,]}>
                 <ScrollView
                     horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                    >
+                    showsHorizontalScrollIndicator={false}>
                     {this.props.tabs.map((tab, i) => {
-                        if(tab === 'plus'){
+                        if (tab === 'plus') {
                             return <TouchableOpacity ref={(component) => this.tabComponent.push(component)}
-                                                     key={tab} onPress={() => this._getMore()}
-                                                     style={[styles.tab,{backgroundColor: (this.props.activeTab === i? '#f1f1f1': '#fff')}]}>
+                                key={tab} onPress={() => this._getMore()}
+                                style={[styles.tab, { backgroundColor: (this.props.activeTab === i ? '#f1f1f1' : '#fff') }]}>
                                 <Image
                                     resizeMode={'contain'}
                                     style={styles.plusButton}
-                                    source={require('./plus.png')}/>
+                                    source={require('./plus.png')} />
                             </TouchableOpacity>;
                         }
 
-                        if(tab === 'history'){
+                        if (tab === 'history') {
                             return <TouchableOpacity ref={(component) => this.tabComponent.push(component)}
-                                                     key={tab} onPress={() => this._onIconPress(i)}
-                                                     style={[styles.tab,{backgroundColor: (this.props.activeTab === i? '#f1f1f1': '#fff')}]}>
+                                key={tab} onPress={() => this._onIconPress(i)}
+                                style={[styles.tab, { backgroundColor: (this.props.activeTab === i ? '#f1f1f1' : '#fff') }]}>
                                 <Image
                                     resizeMode={'contain'}
                                     style={styles.plusButton}
-                                    source={require('./history.png')}/>
+                                    source={require('./history.png')} />
                             </TouchableOpacity>;
                         }
 
                         return <TouchableOpacity ref={(component) => this.tabComponent.push(component)}
-                                                 key={tab} onPress={() => this._onIconPress(i)}
-                                                 style={[styles.tab,{backgroundColor: (this.props.activeTab === i? '#f1f1f1': '#fff')}]}>
-                            <Text style={styles.emoji }>{this.props.tabs[i]}</Text>
+                            key={tab} onPress={() => this._onIconPress(i)}
+                            style={[styles.tab, { backgroundColor: (this.props.activeTab === i ? '#f1f1f1' : '#fff') }]}>
+                            <Text style={styles.emoji}>{this.props.tabs[i]}</Text>
                         </TouchableOpacity>;
                     })}
                 </ScrollView>
-
             </View>);
     }
 }
