@@ -177,6 +177,7 @@ class Emoticons extends React.Component {
     }
 
     _history(val) {
+        if (!this.props.showHistoryBar) return;
         //AsyncStorage.removeItem(HISTORY_STORAGE);
         AsyncStorage.getItem(HISTORY_STORAGE, (err, result) => {
             let value = _.clone(val);
